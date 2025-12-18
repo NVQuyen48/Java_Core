@@ -1,0 +1,23 @@
+package main.java.Entity;
+
+public class CategoryQuestion {
+    int categoryId;
+    String categoryName;
+
+    public CategoryQuestion(int categoryId, String categoryName) {
+        this.categoryId = categoryId;
+        this.categoryName = categoryName;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    @Override
+    public String toString() {
+        return "CategoryQuestion{" +
+                "categoryId=" + categoryId +
+                ", categoryName='" + categoryName + '\'' +
+                '}';
+    }
+}

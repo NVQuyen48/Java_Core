@@ -9,10 +9,10 @@ public class Department {
         this.departmentName = name;
     }
 
-    public String getName() {
+
+    public String getDepartmentName() {
         return departmentName;
     }
-
 
     public int getDepartmentId() {
         return departmentId;

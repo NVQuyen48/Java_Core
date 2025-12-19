@@ -8,6 +8,14 @@ public class GroupAccount {
     int accountID;
     LocalDate joinDate;
 
+    public int getGroupID() {
+        return groupID;
+    }
+
+    public int getAccountID() {
+        return accountID;
+    }
+
     public GroupAccount(int groupID, int accountID, LocalDate joinDate) {
         this.groupID = groupID;
         this.accountID = accountID;

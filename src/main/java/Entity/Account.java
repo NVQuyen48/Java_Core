@@ -18,6 +18,26 @@ public class Account {
         return accountID;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public Department getDepartmentId() {
+        return departmentId;
+    }
+
+    public Position getPositionID() {
+        return positionID;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
     public Account(int accountID, String email, String userName, String fullName, Department departmentId, Position positionID, LocalDate createDate) {
         this.accountID = accountID;
         this.email = email;

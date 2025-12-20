@@ -13,6 +13,9 @@ public class Account {
     Position positionID;
     LocalDate createDate;
 
+    public Account(int id, String email, String username, String fullname, Department departmentId) {
+    }
+
 
     public int getAccountID() {
         return accountID;
@@ -56,7 +59,7 @@ public class Account {
                 ", email='" + email + '\'' +
                 ", userName='" + userName + '\'' +
                 ", fullName='" + fullName + '\'' +
-                ", departmentId=" + departmentId.getDepartmentId() +
+                ", departmentId=" + departmentId.getDepartmentName() +
                 ", positionID=" + positionID.getPositionId() +
                 ", createDate=" + createDate +
                 '}';

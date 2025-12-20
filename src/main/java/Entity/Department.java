@@ -1,11 +1,12 @@
 package main.java.Entity;
 
 public class Department {
+    private static int counter = 0;
     int departmentId;
     String departmentName;
 
-    public Department(int id, String name) {
-        this.departmentId = id;
+    public Department(String name) {
+        this.departmentId = ++counter;
         this.departmentName = name;
     }
 

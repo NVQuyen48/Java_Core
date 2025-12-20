@@ -8,17 +8,14 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class JavaCoreApplication {
     public static void main(String[] args) throws ParseException {
 //        Đối tượng thông tin phòng ban
-        Department department1 = new Department(1, "Sales");
-        Department department2 = new Department(2, "Marketing");
-        Department department3 = new Department(3, "HR");
+        Department department1 = new Department("Sales");
+        Department department2 = new Department("Marketing");
+        Department department3 = new Department("HR");
 
 //        System.out.println("Phòng ban 1:" + d1.getName());
 //        System.out.println("Phòng ban 1:"+ d1.toString());
@@ -96,6 +93,7 @@ public class JavaCoreApplication {
 //        question18();
 //        question19(accounts);
         question20();
+//        question21();
 
     }
 
@@ -372,17 +370,97 @@ public class JavaCoreApplication {
     }
 
     //    Exercise 5: Input from console
+//    Question 1:Viết lệnh cho phép người dùng nhập 3 số nguyên vào chương trình.
+//    Question 2:Viết lệnh cho phép người dùng nhập 2 số thực vào chương trình.
+//    Question 3:Viết lệnh cho phép người dùng nhập họ và tên.
+//    Question 4:Viết lệnh cho phép người dùng nhập vào ngày sinh nhật của họ.
     public static void question20() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập vào 3 số nguyên");
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        int l = sc.nextInt();
-        System.out.printf("3 số nguyên n=%d m=%d l=%d", n, m, l);
+//        System.out.println("Nhập vào 3 số nguyên");
+//        int n = sc.nextInt();
+//        int m = sc.nextInt();
+//        int l = sc.nextInt();
+//        System.out.printf("3 số nguyên n=%d m=%d l=%d", n, m, l);
+//
+//        System.out.println("%nNhập vào 2 số thực:");
+//        float x = sc.nextFloat();
+//        float y = sc.nextFloat();
+//        System.out.printf("2 số thực x=%f y=%f", x, y);
 
-        System.out.println("Nhập vào 2 số thực:");
-        float x = sc.nextFloat();
-        float y = sc.nextFloat();
-        System.out.printf("2 số thực x=%f y=%f", x, y);
+//        System.out.println("%nNhập vào họ và tên:");
+//        String fullName = sc.nextLine();
+//        System.out.println("Họ và tên:" + fullName);
+
+//        System.out.println("%nNhập vào ngày sinh nhật");
+//        LocalDate birthDate = LocalDate.parse(sc.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+//        System.out.println(birthDate);
+
+        while (true) {
+            System.out.println("Nhập vào chức năng muốn sử dụng:");
+            System.out.println("1:Tạo account, 2:tạo department, 3:Thoát");
+            int n = sc.nextInt();
+            if (n == 1) {
+                System.out.println("Tạo account");
+                System.out.println("Nhập id account");
+                int id = sc.nextInt();
+                sc.nextLine();
+                System.out.print("Nhập Email: ");
+                String email = sc.nextLine();
+                System.out.println("Nhập username account");
+                String username = sc.nextLine();
+                System.out.println("Nhập full name account");
+                String fullname = sc.nextLine();
+                System.out.println("Nhập phòng ban");
+                String departmentName = sc.nextLine();
+                Department department = new Department(departmentName);
+                Account account = new Account(id, email, username, fullname, department);
+                System.out.println(account);
+            } else if (n == 2) {
+                System.out.println("Tạo department");
+            } else if (n == 3) {
+                break;
+            } else {
+                System.out.println("Moi bạn nhập lại");
+            }
+        }
+    }
+
+
+    //    Exercise 4: Random Number
+//    Question 1:In ngẫu nhiên ra 1 số nguyên
+//    Question 2:In ngẫu nhiên ra 1 số thực
+//    Question 3:Khai báo 1 array bao gồm các tên của các bạn trong lớp, sau đó in ngẫu nhiên ra tên của 1 bạn
+//    Question 4:Lấy ngẫu nhiên 1 ngày trong khoảng thời gian 24-07-1995 tới ngày 20-12- 1995
+//    Question 5:Lấy ngẫu nhiên 1 ngày trong khoảng thời gian 1 năm trở lại đây
+//    Question 6:Lấy ngẫu nhiên 1 ngày trong quá khứ.
+//    Question 7:Lấy ngẫu nhiên 1 số có 3 chữ số.
+    public static void question21() {
+        Random random = new Random();
+        int x = random.nextInt();
+        System.out.println(x);
+
+        double y = random.nextDouble();
+        System.out.println(y);
+        String[] arr = {"Quyền", "Thành", "Hà"};
+        System.out.println(arr[random.nextInt(arr.length)]);
+
+        int minDay = (int) LocalDate.of(1995, 07, 24).toEpochDay();
+        int maxDay = (int) LocalDate.of(1995, 12, 20).toEpochDay();
+        long randomInt = minDay + random.nextInt(maxDay - minDay);
+        LocalDate randomDate = LocalDate.ofEpochDay(randomInt);
+        System.out.println(randomDate);
+
+        LocalDate now = LocalDate.now();
+        int dayAgo = random.nextInt(365);
+        LocalDate randomDateOfDay = now.minusDays(dayAgo);
+        System.out.println(randomDateOfDay);
+
+        int dateAgo = random.nextInt(10000) + 1;
+        LocalDate randomDay = now.minusDays(dateAgo);
+        System.out.println(randomDay);
+
+        int number = 100 + random.nextInt(999);
+        System.out.println(number);
+
     }
 }

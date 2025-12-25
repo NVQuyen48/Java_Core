@@ -16,6 +16,7 @@ public class Group {
         this.createDate = createDate;
     }
 
+
     public int getGroupId() {
         return groupId;
     }

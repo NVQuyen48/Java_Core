@@ -3,6 +3,7 @@ package main.java.Entity;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Objects;
 
 public class Account {
     int accountID;
@@ -14,6 +15,14 @@ public class Account {
     LocalDate createDate;
 
     public Account(int id, String email, String username, String fullname, Department departmentId) {
+    }
+
+    public Account() {
+        String email;
+        String userName;
+        String fullName;
+        LocalDate createDate;
+
     }
 
 
@@ -63,5 +72,23 @@ public class Account {
                 ", positionID=" + positionID.getPositionId() +
                 ", createDate=" + createDate +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        ;
+        if (o instanceof Account) {
+            Account account = (Account) o;
+        }
+        ;
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(accountID);
     }
 }

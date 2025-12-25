@@ -1,6 +1,8 @@
 package main.java;
 
+
 import main.java.Entity.*;
+
 
 import java.sql.SQLOutput;
 import java.text.ParseException;
@@ -11,7 +13,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class JavaCoreApplication {
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) {
 //        Đối tượng thông tin phòng ban
         Department department1 = new Department("Sales");
         Department department2 = new Department("Marketing");
@@ -67,7 +69,22 @@ public class JavaCoreApplication {
         ExamQuestion examQuestion2 = new ExamQuestion(exam2.getExamId(), question2.getQuestionId());
         ExamQuestion examQuestion3 = new ExamQuestion(exam3.getExamId(), question3.getQuestionId());
 
+        Assignment assignment = new Assignment();
+//        assignment.question1();
+//        assignment.question2_and_question3();
+//        assignment.question4();
+//        assignment.question5();
+//        assignment.question6();
+//        assignment.question7();
+//        assignment.question8();
+//        assignment.question9();
+//        assignment.question11("new", "wen");
+//        assignment.question12("hello iamquyen");
+//        System.out.println(assignment.question13("hag"));
+        List<Group> groups = List.of(group1, group2, group3);
 
+        System.out.println(Assignment.question14("VTI Academy", 'e', '*'));
+//        assignment.question10(groups);
 //        for_i();
 //        for_each();
 //        while_01();
@@ -92,10 +109,13 @@ public class JavaCoreApplication {
 //        question16b(accounts);
 //        question18();
 //        question19(accounts);
-        question20();
+//        question20();
 //        question21();
-
+//        System.out.println(accounts);
+//        System.out.println(account1);
+//        System.out.println(account1.equals(account2));
     }
+
 
     public static void for_i() {
         System.out.println("for i");
@@ -141,7 +161,7 @@ public class JavaCoreApplication {
 //    Nếu có mặt trong 1 hoặc 2 group thì sẽ in ra text "Group của nhân viên này là Java Fresher, C# Fresher"
 //    Nếu có mặt trong 3 Group thì sẽ in ra text "Nhân viên này là người quan trọng, tham gia nhiều group"
 //    Nếu có mặt trong 4 group trở lên thì sẽ in ra text "Nhân viên này là người hóng chuyện, tham gia tất cả các group"
-    public static void question2(Account account) {
+    public static void question2(List<Account> accounts, List<GroupAccount> groupAccounts) {
 
     }
 
@@ -423,6 +443,7 @@ public class JavaCoreApplication {
                 System.out.println("Moi bạn nhập lại");
             }
         }
+        sc.close();
     }
 
 

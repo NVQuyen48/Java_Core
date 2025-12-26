@@ -1,4 +1,7 @@
-package main.java.Entity;
+package main.java.assignment3;
+
+import main.java.Entity.Account;
+import main.java.Entity.Group;
 
 import java.time.LocalDate;
 import java.util.List;

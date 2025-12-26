@@ -7,24 +7,45 @@ import java.util.Objects;
 
 public class Account {
     int accountID;
-    String email;
-    String userName;
-    String fullName;
+    public String email;
+    public String userName;
+    public String fullName;
     Department departmentId;
-    Position positionID;
-    LocalDate createDate;
+    Position position;
+    String firstName;
+    String lastName;
+    public LocalDate createDate;
 
-    public Account(int id, String email, String username, String fullname, Department departmentId) {
-    }
 
     public Account() {
-        String email;
-        String userName;
-        String fullName;
-        LocalDate createDate;
-
+        this.accountID = 0;
+        this.email = null;
+        this.userName = null;
+        this.fullName = null;
+        this.departmentId = null;
+        this.position = null;
+        this.createDate = LocalDate.now();
     }
 
+    public Account(int accountID, String email, String userName, String firstName, String lastName) {
+        this.accountID = accountID;
+        this.email = email;
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.fullName = firstName + " " + lastName;
+    }
+
+    public Account(int accountID, String email, String userName, String firstName, String lastName, Position position, LocalDate createDate) {
+        this.accountID = accountID;
+        this.email = email;
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.fullName = firstName + " " + lastName;
+        this.position = position;
+        this.createDate = LocalDate.now();
+    }
 
     public int getAccountID() {
         return accountID;
@@ -39,7 +60,7 @@ public class Account {
     }
 
     public Position getPositionID() {
-        return positionID;
+        return position;
     }
 
     public String getEmail() {
@@ -50,13 +71,13 @@ public class Account {
         return fullName;
     }
 
-    public Account(int accountID, String email, String userName, String fullName, Department departmentId, Position positionID, LocalDate createDate) {
+    public Account(int accountID, String email, String userName, String fullName, Department departmentId, Position position, LocalDate createDate) {
         this.accountID = accountID;
         this.email = email;
         this.userName = userName;
         this.fullName = fullName;
         this.departmentId = departmentId;
-        this.positionID = positionID;
+        this.position = position;
         this.createDate = createDate;
     }
 
@@ -69,7 +90,7 @@ public class Account {
                 ", userName='" + userName + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", departmentId=" + departmentId.getDepartmentName() +
-                ", positionID=" + positionID.getPositionId() +
+                ", positionID=" + position.getPositionId() +
                 ", createDate=" + createDate +
                 '}';
     }

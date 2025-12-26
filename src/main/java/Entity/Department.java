@@ -6,10 +6,15 @@ public class Department {
     String departmentName;
 
     public Department(String name) {
-        this.departmentId = ++counter;
+        this.departmentId = 0;
         this.departmentName = name;
     }
 
+    public Department() {
+        this.departmentId = 0;
+        this.departmentName = null;
+
+    }
 
     public String getDepartmentName() {
         return departmentName;

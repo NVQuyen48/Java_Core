@@ -2,15 +2,16 @@ package main.java;
 
 
 import main.java.Entity.*;
+import main.java.assignment3.Assignment;
 
 
-import java.sql.SQLOutput;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.Date;
 
 public class JavaCoreApplication {
     public static void main(String[] args) {
@@ -433,7 +434,7 @@ public class JavaCoreApplication {
                 System.out.println("Nhập phòng ban");
                 String departmentName = sc.nextLine();
                 Department department = new Department(departmentName);
-                Account account = new Account(id, email, username, fullname, department);
+                Account account = new Account();
                 System.out.println(account);
             } else if (n == 2) {
                 System.out.println("Tạo department");

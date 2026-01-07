@@ -56,9 +56,9 @@ public class Main {
 //        student.setDiem(5.0f);
 //        student.diemCong(2.0f);
 //        student.printInfo();
-//        QLCB();
+        QLCB();
 //        QLUser();
-        QLTV();
+//        QLTV();
     }
 //    Question 2: Tiếp tục Question 1
 //    Xây dựng lớp QLCB(quản lý cán bộ) cài đặt các phương thức thực hiện các chức năng

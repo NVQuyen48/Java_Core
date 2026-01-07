@@ -9,6 +9,14 @@ public class Position {
         this.positionName = name;
     }
 
+    public Position() {
+        System.out.println("Nhập id:");
+        this.positionId = ScannerUtils.inputInt("Nhập lại id position");
+
+        System.out.println("Nhập positionName:");
+        this.positionName = ScannerUtils.inputString();
+    }
+
     public Position(String positionName) {
         this.positionName = positionName;
     }

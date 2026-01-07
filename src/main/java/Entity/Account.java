@@ -1,9 +1,13 @@
 package main.java.Entity;
 
+import main.java.assignment_7.InvalidAgeInputingException;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Objects;
+import java.util.Scanner;
+
 
 public class Account {
     int accountID;
@@ -15,7 +19,34 @@ public class Account {
     String firstName;
     String lastName;
     public LocalDate createDate;
+    private int age;
 
+    static Scanner sc = new Scanner(System.in);
+
+    public void inputAge() throws InvalidAgeInputingException {
+        while (true) {
+            try {
+                System.out.print("Input age: ");
+                int inputAge = Integer.parseInt(sc.nextLine());
+
+                if (inputAge <= 0) {
+                    throw new InvalidAgeInputingException(
+                            "The age must be greater than 0"
+                    );
+                }
+
+                this.age = inputAge;
+                break;
+
+            } catch (InvalidAgeInputingException | NumberFormatException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    public int getAge() {
+        return age;
+    }
 
     public Account() {
         this.accountID = 0;

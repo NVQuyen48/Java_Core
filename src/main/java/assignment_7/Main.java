@@ -2,7 +2,7 @@ package main.java.assignment_7;
 
 import main.java.Entity.Account;
 import main.java.Entity.Position;
-import main.java.Entity.ScannerUtils;
+import main.java.util.ScannerUtils;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,8 +11,8 @@ public class Main {
         int minValue = getMinValue(numbers);
         System.out.println("Max Value: " + maxValue);
         System.out.println("Min Value: " + minValue);
-//        input();
-//        inputPosition();
+        input();
+        inputPosition();
         inputAge();
     }
 

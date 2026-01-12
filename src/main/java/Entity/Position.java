@@ -1,5 +1,7 @@
 package main.java.Entity;
 
+import main.java.util.ScannerUtils;
+
 public class Position {
     int positionId;
     String positionName;
